@@ -1,0 +1,29 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./etc/docker/local/php/Dockerfile
+      target: development
+    container_name: fizz_buzz_php
+    working_dir: /var/www/symfony
+    user: "1000:1000"
+    volumes:
+      - ./:/var/www/symfony
+      - "./var/coverage:/opt/phpstorm-coverage"
+    environment:
+      PHP_IDE_CONFIG: serverName=fizz_buzz
+    networks:
+      - fizz_buzz
+    expose:
+      - "9003"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+#    command: ["php", "-S", "0.0.0.0:8080", "-t", "/var/www/symfony/public"]
+
+networks:
+  fizz_buzz:
+
+volumes:
+  ###> doctrine/doctrine-bundle ###
+  database_data:
+  ###< doctrine/doctrine-bundle ###
