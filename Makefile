@@ -10,6 +10,13 @@ start:
 	test -f .env.dev || cp .env .env.dev
 	docker compose up -d --no-build --remove-orphans --force-recreate --wait
 	docker compose exec php composer install
+	make database
+
+database:
+	docker compose exec php bin/console doctrine:database:create
+	docker compose exec php bin/console doctrine:migrations:migrate --no-interaction
+	docker compose exec php bin/console doctrine:database:create --env=test
+	docker compose exec php bin/console doctrine:migrations:migrate --no-interaction --env=test
 
 .PHONY: bash
 bash:
