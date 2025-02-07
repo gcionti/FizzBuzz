@@ -2,7 +2,7 @@
 
 namespace App\Service;
 
-final class FizzBuzz
+final readonly class FizzBuzz
 {
     public static function calculate(int $number): string
     {

@@ -8,7 +8,7 @@ use Ramsey\Uuid\Doctrine\UuidGenerator;
 use Ramsey\Uuid\UuidInterface;
 
 #[ORM\Entity]
-final class FizzBuzz
+class FizzBuzz
 {
     public function __construct(
         #[ORM\Id]
