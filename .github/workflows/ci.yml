@@ -33,11 +33,6 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
-      - name: Create .env.test file
-        run: |
-          cp .env .env.test
-          echo "APP_ENV=test" >> .env.test
-
       - name: Set up database
         run: |
           php bin/console doctrine:database:create --env=test
