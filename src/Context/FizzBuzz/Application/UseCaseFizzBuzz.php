@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Service;
+namespace App\Context\FizzBuzz\Application;
 
-use App\Entity\FizzBuzz as FizzBuzzEntity;
-use App\Entity\FizzBuzzRepository;
+use App\Context\FizzBuzz\Domain\FizzBuzz;
+use App\Context\FizzBuzz\Domain\FizzBuzzRepository;
 use Ramsey\Uuid\Uuid;
 
 final readonly class UseCaseFizzBuzz
@@ -14,16 +14,14 @@ final readonly class UseCaseFizzBuzz
 
     public function __invoke(int $initialNumber, int $finalNumber): string
     {
-        $result = FizzBuzz::calculateRange($initialNumber, $finalNumber);
-        $fizzBuzz = new FizzBuzzEntity(
+        $fizzBuzz = new FizzBuzz(
             id: Uuid::uuid4(),
             initialNumber: $initialNumber,
             finalNumber: $finalNumber,
-            result: $result,
             createdAt: new \DateTime()
         );
         $this->fizzBuzzRepository->save($fizzBuzz);
 
-        return $result;
+        return $fizzBuzz->result();
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Tests\Service;
+namespace App\Tests\Integration\Context\FizzBuzz\Application;
 
-use App\Repository\DoctrineFizzBuzzRepository;
-use App\Service\UseCaseFizzBuzz;
-use App\Tests\Repository\RepositoryTestCase;
+use App\Context\FizzBuzz\Application\UseCaseFizzBuzz;
+use App\Context\FizzBuzz\Infrastructure\Persistence\Repository\DoctrineFizzBuzzRepository;
+use App\Tests\Integration\Context\FizzBuzz\Infrastructure\Persistence\Repository\RepositoryTestCase;
 
 final class UseCaseFizzBuzzTest extends RepositoryTestCase
 {

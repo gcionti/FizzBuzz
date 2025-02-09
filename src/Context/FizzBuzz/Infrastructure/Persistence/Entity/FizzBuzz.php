@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace App\Context\FizzBuzz\Infrastructure\Persistence\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
