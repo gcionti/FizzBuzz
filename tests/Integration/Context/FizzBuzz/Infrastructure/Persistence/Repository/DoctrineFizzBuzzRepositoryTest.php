@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Tests\Repository;
+namespace App\Tests\Integration\Context\FizzBuzz\Infrastructure\Persistence\Repository;
 
-use App\Entity\FizzBuzz;
-use App\Repository\DoctrineFizzBuzzRepository;
+use App\Context\FizzBuzz\Domain\FizzBuzz;
+use App\Context\FizzBuzz\Infrastructure\Persistence\Repository\DoctrineFizzBuzzRepository;
 use Ramsey\Uuid\Uuid;
 
 final class DoctrineFizzBuzzRepositoryTest extends RepositoryTestCase
@@ -14,7 +14,6 @@ final class DoctrineFizzBuzzRepositoryTest extends RepositoryTestCase
             Uuid::fromString('550e8400-e29b-41d4-a716-446655440000'),
             1,
             20,
-            'test',
             new \DateTime
         );
 
@@ -22,7 +21,7 @@ final class DoctrineFizzBuzzRepositoryTest extends RepositoryTestCase
 
         $fizzBuzzFound = $this->repository()->ofId($fizzBuzz->id());
 
-        $this->assertEquals($fizzBuzz->id(), $fizzBuzzFound->id());
+        $this->assertEquals($fizzBuzzFound->id(), $fizzBuzz->id());
     }
 
     protected function truncate(): void

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Context\FizzBuzz\Infrastructure\Controller;
 
-use App\Service\UseCaseFizzBuzz;
+use App\Context\FizzBuzz\Application\UseCaseFizzBuzz;
 use Exception;
 use InvalidArgumentException;
 use Symfony\Component\HttpFoundation\Request;

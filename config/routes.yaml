@@ -1,5 +1,5 @@
-controllers:
+fizz-buzz:
     resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+        path: ../src/Context/FizzBuzz/Infrastructure/Controller
+        namespace: App\Context\FizzBuzz\Infrastructure\Controller
     type: attribute
