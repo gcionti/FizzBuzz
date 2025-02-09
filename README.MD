@@ -2,8 +2,10 @@
 
 ## 📖 Estrategia de Desarrollo
 
-Este proyecto se desarrolla de manera iterativa, iniciando con una implementación basada en **MVC** y evolucionando progresivamente hacia una **arquitectura hexagonal**.
-Posteriormente, se podría aplicar **CQRS** en futuras iteraciones.
+Este proyecto se desarrolla de manera iterativa. 
+Aunque podría haberse implementado desde el inicio utilizando **CQRS**, he optado por un enfoque progresivo, comenzando con 
+una arquitectura basada en **MVC** y evolucionando gradualmente hacia una **arquitectura hexagonal**. 
+En futuras iteraciones, se podrá integrar CQRS para seguir mejorando la solución.
 
 > **Nota:** Aunque la implementación de CQRS no se abordará en esta fase debido a limitaciones de tiempo, el diseño del proyecto
 > ha sido estructurado para facilitar su integración en futuras iteraciones. Si se considera oportuno, estaré encantado de explicar
@@ -82,6 +84,8 @@ Se utilizará el prefijo `PR-` para relacionar los commits del proyecto con cada
 }
 ```  
 - Aplicación de **tests E2E**.
+
+### **🔹 PR-7: Pipeline Github**
 
 ---
 

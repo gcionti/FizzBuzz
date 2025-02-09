@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
-use Ramsey\Uuid\Doctrine\UuidGenerator;
 use Ramsey\Uuid\UuidInterface;
 
 #[ORM\Entity]
@@ -13,8 +12,7 @@ class FizzBuzz
     public function __construct(
         #[ORM\Id]
         #[ORM\Column(type: 'uuid', unique: true)]
-        #[ORM\GeneratedValue(strategy: 'CUSTOM')]
-        #[ORM\CustomIdGenerator(class: UuidGenerator::class)]
+        #[ORM\GeneratedValue(strategy: 'NONE')]
         private UuidInterface $id,
         #[ORM\Column(type: 'integer')]
         private int $initialNumber,
